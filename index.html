@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#004930">
+    <title>MOA-mässan 2026 - Lidingö Stad</title>
+    <style>
+        :root {
+            color-scheme: light;
+            supported-color-schemes: light;
+
+            /* Lidingö Grafiska Profil & Tillgänglighet */
+            --centrumgron-4: #004930;
+            --centrumgron-3: #348275;
+            --centrumgron-1: #e6f0ed;
+            --basbla-5: #002649; /* Mörkblå för maximal textkontrast & färgblindhet */
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --grid-base: 13px;
+
+            /* Dynamiska Formatenheter */
+            --format-unit: 80px;
+            --margin-unit: 20px;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Calibri', 'Noto Sans', sans-serif; 
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            background-color: #e6f0ed !important;
+            background: #e6f0ed !important;
+            height: 100%;
+        }
+
+        body { 
+            background-color: #e6f0ed !important; 
+            background: #e6f0ed !important;
+            color: #1a1a1a !important; 
+            padding-bottom: 40px;
+            font-size: var(--grid-base);
+            line-height: 1.5;
+            min-height: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header med 10-graders vinkel signaturelement */
+        header { 
+            background-color: #004930 !important; 
+            color: #ffffff !important; 
+            padding: calc(var(--margin-unit) * 1.25) var(--margin-unit); 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Ökat mellanrum till rubriken */
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-logo {
+            width: 33px; /* Något större sköld */
+            height: 39px;
+            fill: #ffffff !important;
+            stroke: #ffffff !important; /* Tjockare konturer */
+            stroke-width: 0.5px;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: -10%;
+            width: 120%;
+            height: 30px;
+            background: #348275;
+            transform: rotate(-10deg);
+            opacity: 0.6;
+        }
+
+        /* Navigation i TOPPEN */
+        nav.top-nav { 
+            position: relative; 
+            width: 100%; 
+            background-color: #ffffff !important; 
+            background: #ffffff !important; 
+            display: flex; 
+            justify-content: space-around; 
+            padding: 13px 0; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            max-width: 800px; 
+            margin: 0 auto;
+            border-bottom: 2px solid #e6f0ed;
+            z-index: 10;
+        }
+
+        nav.top-nav div { 
+            text-align: center; 
+            font-weight: bold; 
+            cursor: pointer; 
+            color: #1a1a1a !important; 
+            flex: 1;
+            padding: 12px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        nav.top-nav div.active { 
+            color: #002649 !important; /* Mörkblå text för aktiv nav */
+            border-bottom: 4px solid #002649;
+            background-color: #e6f0ed !important;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Typografi */
+        h1 { 
+            font-size: 26px; 
+            font-weight: 700;
+            margin-bottom: 0px;
+            position: relative;
+            z-index: 2;
+            color: #ffffff !important;
+        }
+
+        h2 { 
+            font-size: 13px; 
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #002649 !important; /* Mörkblå */
+            margin-bottom: 13px;
+        }
+
+        /* Rubrik för Gymnasieprogramsgrupper */
+        .program-group-title {
+            font-size: 18.2px; 
+            font-weight: 700;
+            color: #002649 !important; 
+            margin-top: 22px;
+            margin-bottom: 11px;
+            padding-bottom: 5px;
+            border-bottom: 2.5px solid #002649;
+        }
+
+        /* Grid Layout */
+        .grid-container { 
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            padding: var(--margin-unit);
+            max-width: 800px; 
+            margin: 0 auto; 
+            gap: 13px;
+        }
+
+        /* Unik, tydlig bakgrund för Yrkeslistan (Mjuk varmgul med hög kontrast) */
+        #view-professions {
+            background-color: #fef3c7 !important; /* Mjuk varmgul bakgrund */
+            border-radius: 20px;
+            border: none !important; /* Ramen borttagen */
+            padding: calc(var(--margin-unit) * 0.75);
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .full-width {
+            grid-column: span 20;
+        }
+
+        .card-grid {
+            grid-column: span 20;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 13px;
+        }
+
+        @media (orientation: landscape) and (min-width: 500px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* UI-Kort */
+        .card { 
+            background-color: #ffffff !important; 
+            background: #ffffff !important;
+            padding: calc(var(--margin-unit) * 0.9); 
+            border-radius: 13px; 
+            box-shadow: 0 4px 12px rgba(0,73,48,0.08); 
+            cursor: pointer; 
+            border-left: 6.5px solid #002649; 
+            transition: transform 0.15s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:active { 
+            transform: scale(0.97); 
+        }
+
+        /* Företagskort med grön linje (Centrumgrön) */
+        #view-companies .card {
+            border-left: 6.5px solid #004930 !important;
+        }
+
+        /* Yrkeskort i yrkeslistan med varmgul linje */
+        #view-professions .card {
+            border-left: 6.5px solid #f59e0b !important;
+            border-top: 1px solid #fde68a !important;
+            border-right: 1px solid #fde68a !important;
+            border-bottom: 1px solid #fde68a !important;
+        }
+
+        /* Yrkeskort i Mina Val med varmgul linje */
+        #view-saved .card {
+            border-left: 6.5px solid #f59e0b !important;
+            border-top: 1px solid #fde68a !important;
+            border-right: 1px solid #fde68a !important;
+            border-bottom: 1px solid #fde68a !important;
+        }
+
+
+
+        .card h3 {
+            font-size: 18.2px;
+            color: #002649 !important; 
+            margin-bottom: 6.5px;
+        }
+
+        /* Sorteringsväxlare i Mina Val */
+        .toggle-container {
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #002649;
+            border-radius: 9999px;
+            padding: 4px;
+            margin-bottom: 15px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: #002649; 
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .toggle-btn.active {
+            background-color: #002649 !important; 
+            color: #ffffff !important;
+        }
+
+        /* Tillgänglig Ta bort-knapp i Mina Val */
+        .saved-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .remove-btn-inline {
+            background-color: #334155 !important; 
+            color: #ffffff !important;
+            border: 1px solid #1e293b !important;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.15s ease;
+        }
+
+        .remove-btn-inline:active {
+            background-color: #0f172a !important;
+        }
+
+        /* Knappar */
+        .btn { 
+            display: inline-block;
+            width: 100%; 
+            background-color: #002649 !important; 
+            background: #002649 !important; 
+            color: #ffffff !important; 
+            border: none; 
+            padding: var(--margin-unit) calc(var(--margin-unit) * 1.5); 
+            border-radius: 9999px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 13px; 
+            text-align: center; 
+            text-decoration: none;
+            transition: background 0.2s ease;
+            -webkit-appearance: none;
+        }
+
+        .btn:hover {
+            background-color: #2174d8 !important;
+            background: #2174d8 !important;
+        }
+
+        .btn-outline { 
+            background-color: transparent !important; 
+            background: transparent !important; 
+            color: #002649 !important; 
+            border: 2px solid #002649 !important; 
+        }
+
+        .lidingo-link {
+            color: #002649 !important; 
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #002649;
+            padding-bottom: 2px;
+            cursor: pointer;
+        }
+
+        /* Modal */
+        #modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 38, 73, 0.6); 
+            padding: var(--margin-unit); 
+            z-index: 100; 
+            overflow-y: auto; 
+        }
+
+        .modal-content { 
+            background-color: #ffffff !important; 
+            background: #ffffff !important; 
+            padding: calc(var(--margin-unit) * 1.25); 
+            border-radius: 20px; 
+            max-width: 600px; 
+            margin: var(--margin-unit) auto; 
+            position: relative; 
+            border-top: 8px solid #002649;
+        }
+
+        .close-circle { 
+            position: absolute; 
+            right: 15px; 
+            top: 15px; 
+            width: 32px;
+            height: 32px;
+            background-color: #e6f0ed !important;
+            color: #002649 !important;
+            border-radius: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer; 
+        }
+
+        .job-description-box {
+            background-color: #f1f5f9 !important;
+            color: #1a1a1a !important; 
+            padding: 13px;
+            border-radius: 10px;
+            margin: 10px 0 15px 0;
+            font-size: 12.5px;
+            line-height: 1.4;
+            border: 1px solid #cbd5e1;
+        }
+
+        .question-box { 
+            background-color: #f1f5f9 !important; 
+            padding: 13px; 
+            border-radius: 8px; 
+            margin: 9.75px 0; 
+            border-left: 4px solid #002649; 
+            font-style: italic; 
+            color: #1a1a1a !important; 
+        }
+
+        .program-tag { 
+            display: inline-block; 
+            background-color: #002649 !important; 
+            color: #ffffff !important;
+            padding: 6.5px 13px; 
+            border-radius: 9999px; 
+            font-size: 11.7px; 
+            margin: 3.25px; 
+            font-weight: 600;
+        }
+
+        .program-tag-light { 
+            display: inline-block; 
+            background-color: #e6f0ed !important; 
+            color: #1a1a1a !important; 
+            border: 1.5px solid #348275;
+            padding: 5px 11px; 
+            border-radius: 9999px; 
+            font-size: 12px; 
+            margin: 3px 2px; 
+            font-weight: 600;
+        }
+
+        input[type="text"] { 
+            width: 100%; 
+            padding: 13px; 
+            margin-top: 9.75px; 
+            border: 2px solid #002649; 
+            border-radius: 9999px; 
+            font-size: 13px; 
+            outline: none;
+            background-color: #ffffff !important;
+            color: #1a1a1a !important;
+            -webkit-appearance: none;
+        }
+
+        .debug-info {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <svg class="header-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.18 36.85" aria-hidden="true">
+  <g fill="currentColor">
+    <path d="M0,27.21c0,2.38,1.49,4.51,3.73,5.33l11.86,4.31,11.86-4.31c2.24-.81,3.73-2.94,3.73-5.33V0H0v27.21ZM.94.93h29.31v26.28c0,1.98-1.25,3.77-3.12,4.45l-11.54,4.2-11.54-4.2c-1.86-.68-3.12-2.47-3.12-4.45V.93Z"/>
+    <path d="M20.39,19.38c1.5.56,2.64,1.07,2.77,1.13-.59-.79-1.08-1.6-1.46-2.42-.9-1.87-1.25-3.79-1.04-5.64,0-.04.01-.09.02-.13.03-.22.06-.44.11-.66.03-.16.07-.32.11-.47.02-.09.05-.18.07-.27.39-1.39,1.12-2.71,2.17-3.91l-1.77.31-.24.25c-3.04,3.19-3.29,7.83-.73,11.81Z"/>
+    <path d="M15.38,8.52c-2.14,2.3-2.6,6.13-1.39,9.34.05,0,.08,0,.13,0,.6,0,1.27.1,1.99.24-1.41-3.44-.99-7.34,1.23-10.06l-1.8.32-.16.17Z"/>
+    <path d="M16.97,18.29c.8.2,1.61.45,2.37.72-2.15-3.91-1.84-8.28.89-11.49l-1.78.31-.2.21c-2.5,2.65-2.92,6.75-1.29,10.25Z"/>
+    <path d="M12.63,8.86l-.12.13c-1.95,2.14-2.33,6.22-1.13,9.31.48-.2,1.09-.36,1.87-.42-1.11-3.18-.71-6.88,1.19-9.34l-1.82.32Z"/>
+    <path d="M9.64,9.47c-2.33,2.61-1.98,8.29-.01,10.79l.08.11c.02-.32.18-1.11,1.06-1.72-1.18-2.97-1.13-6.98.79-9.59l-1.84.32-.08.09Z"/>
+    <path d="M15.59,6.34v-2.07c-4.69,3.16-2.25-2.89-8.95,1.94.43-.08,1.21-.34,1.21-.34,3.65-1.2,3.8,2.61,7.74.48Z"/>
+    <path d="M8.74,26.72h13.68c1.34,0,2.35-.44,3.02-1.32.61-.79.83-1.82.84-2.8l-.28-.05c-.3,1.74-1.53,3.29-3.84,3.29h-13.18c-2.07,0-3.44-1.22-3.81-3.29l-.3.05c.06,1.2.38,2.2.94,2.89.66.81,1.64,1.21,2.94,1.21Z"/>
+    <path d="M27.19,22.12c-.06-.37-.14-.74-.24-1.08-.2-.66-.64-2.03-.73-2.35-.1-.34.02-.51.02-.51,0,0,.21.36.59.26.36-.09.38-.5.27-.74-.17-.4-.75-.59-1.21-.25-.67.5-.45,1.31-.25,2.49.12.73.01,1.36-.24,1.87l1.77.31Z"/>
+    <path d="M4.56,17.04c.08.63-1.11.33-1.11.33l.2.68s.53-.28.8-.03c.28.25.12.42-.2,1.78-.18.78-.3,1.57-.36,2.33l1.87-.33c-.24-.48-.35-1.06-.28-1.71.11-1.13.4-2.88,1.28-3.88,0,0-.83.08-1.51-.15-.74-.25-.98-.3-1.46-.18-.48.13-.6.85-.6.85,0,0,1.26-.53,1.36.3ZM5.34,16.48c.18,0,.33.15.33.33s-.15.33-.33.33-.33-.15-.33-.33.15-.33.33-.33Z"/>
+    <path d="M26,25.83c-.8,1.04-2.03,1.59-3.57,1.59h-13.68c-1.51,0-2.68-.49-3.48-1.47-.74-.91-1.03-2.08-1.1-3.21l-.29.05c-.05,3.06,1.18,5.56,4.94,5.56h13.56c4.01,0,5.1-2.92,4.9-5.56l-.29-.05c-.03,1.08-.3,2.2-.99,3.1Z"/>
+    <path d="M21.6,24.77c-.46,0-.88-.17-1.2-.45-.33.27-.74.45-1.2.45s-.88-.17-1.2-.45c-.33.27-.74.45-1.2.45s-.88-.17-1.2-.45c-.33.27-.74.45-1.2.45s-.88-.17-1.2-.45c-.33.27-.74.45-1.2.45-.93,0-1.7-.68-1.84-1.58-.64-.07-1.19-.35-1.59-.8l-.31.05c.21,1.14.9,2.71,3.13,2.71h13.18c2,0,2.92-1.34,3.15-2.72l-.29-.05c-.41.45-.97.73-1.58.8-.14.89-.91,1.58-1.85,1.58Z"/>
+    <path d="M21.6,24.07c.65,0,1.18-.53,1.18-1.18s-.53-1.18-1.18-1.18c-.29,0-.55.11-.76.29.14.27.23.56.23.89s-.09.62-.23.89c.21.18.47.29.76.29ZM21.6,22.52c.21,0,.37.17.37.37s-.17.37-.37.37-.37-.17-.37-.37.17-.37.37-.37Z"/>
+    <path d="M19.2,24.07c.65,0,1.18-.53,1.18-1.18s-.53-1.18-1.18-1.18c-.29,0-.55.11-.76.29.14.27.23.56.23.89s-.09.62-.23.89c.21.18.47.29.76.29ZM19.2,22.52c.2,0,.37.17.37.37s-.17.37-.37.37-.37-.17-.37-.37.17-.37.37-.37Z"/>
+    <path d="M16.79,24.07c.65,0,1.18-.53,1.18-1.18s-.53-1.18-1.18-1.18c-.29,0-.55.11-.76.29.14.27.23.56.23.89s-.09.62-.23.89c.21.18.47.29.76.29ZM16.79,22.52c.21,0,.37.17.37.37s-.17.37-.37.37-.37-.17-.37-.37.17-.37.37-.37Z"/>
+    <path d="M14.39,24.07c.65,0,1.18-.53,1.18-1.18s-.53-1.18-1.18-1.18c-.29,0-.55.11-.76.29.14.27.23.56.23.89s-.09.62-.23.89c.21.18.47.29.76.29ZM14.39,22.52c.21,0,.37.17.37.37s-.17.37-.37.37-.37-.17-.37-.37.17-.37.37-.37Z"/>
+    <path d="M11.99,24.07c.65,0,1.18-.53,1.18-1.18s-.53-1.18-1.18-1.18c-.29,0-.55.11-.76.29.14.27.23.56.23.89s-.09.62-.23.89c.21.18.47.29.76.29ZM11.99,22.52c.21,0,.37.17.37.37s-.17.37-.37.37-.37-.17-.37-.37.17-.37.37-.37Z"/>
+    <path d="M9.59,21.71c-.65,0-1.18.53-1.18,1.18s.53,1.18,1.18,1.18,1.18-.53,1.18-1.18-.53-1.18-1.18-1.18ZM9.59,23.26c-.2,0-.37-.17-.37-.37s.17-.37.37-.37.37.17.37.37-.17.37-.37.37Z"/>
+  </g>
+</svg>
+            <h1>MOA-mässan 2026</h1>
+        </div>
+    </header>
+
+    <!-- Navigation i TOPPEN -->
+    <nav class="top-nav">
+        <div id="nav-explore" class="active" onclick="showCompanies()">🔍 Utforska</div>
+        <div id="nav-saved" onclick="showSaved()">⭐ Mina val (<span id="saved-count">0</span>)</div>
+    </nav>
+
+    <div class="grid-container" id="view-companies">
+        <div class="full-width">
+            <h2>Välj företag att besöka</h2>
+        </div>
+        <div class="card-grid" id="company-list"></div>
+    </div>
+
+    <div class="grid-container" id="view-professions" style="display:none;">
+        <div class="full-width">
+            <span class="lidingo-link" onclick="showCompanies()">&larr; Tillbaka till företag</span>
+            <h1 id="current-company-title" style="color: #002649 !important; margin-top: 13px;">Företag</h1>
+            <h2>Tillgängliga yrken i montern</h2>
+        </div>
+        <div class="card-grid" id="profession-list"></div>
+        
+        <div class="full-width" style="margin-top: 26px; padding-top: 19.5px; border-top: 2px solid #e6f0ed;">
+            <h2>Hittar du inte yrket?</h2>
+            <p style="color: #1a1a1a;">Hittade du ett yrke i montern som saknas i listan? Lägg till det här!</p>
+            <input type="text" id="custom-profession" placeholder="T.ex. Hållbarhetsansvarig">
+            <button class="btn btn-outline" onclick="addCustomProfession()">+ Lägg till yrke</button>
+        </div>
+    </div>
+
+    <div class="grid-container" id="view-saved" style="display:none;">
+        <div class="full-width">
+            <h1 style="color: #002649 !important;">Min Sammanställning</h1>
+            <h2>Välj hur du vill sortera dina stjärnmärkta yrken</h2>
+        </div>
+        
+        <!-- Sorteringsväxlare (Utan emojis) -->
+        <div class="full-width">
+            <div class="toggle-container">
+                <button id="toggle-program" class="toggle-btn active" onclick="setSortMode('program')">Gymnasieprogram</button>
+                <button id="toggle-profession" class="toggle-btn" onclick="setSortMode('profession')">Yrken</button>
+            </div>
+        </div>
+
+        <div class="full-width" id="saved-list"></div>
+        
+        <div class="full-width">
+            <button class="btn" onclick="generateEmail()" style="margin-top: 19.5px;">✉️ Mejla sammanställning till mig själv</button>
+        </div>
+    </div>
+
+    <!-- Modal for Yrkeskort -->
+    <div id="modal">
+        <div class="modal-content">
+            <div class="close-circle" onclick="closeModal()">✕</div>
+            <h1 id="modal-title" style="color: #002649 !important;">Yrke</h1>
+            <p id="modal-company" style="color: #002649 !important; font-weight: bold; margin-bottom: 9.75px;"></p>
+            
+            <div id="desc-section">
+                <h2>Kort om yrket</h2>
+                <div id="modal-description" class="job-description-box"></div>
+            </div>
+
+            <h2>Möjliga gymnasieprogram</h2>
+            <div id="modal-programs" style="margin-bottom: 15px;"></div>
+            
+            <button class="btn" id="star-btn" onclick="toggleSaveProfession()" style="margin-top: 5px; margin-bottom: 22px; background-color: #FFD700 !important; background: #FFD700 !important; color: #1a1a1a !important;">⭐ Stjärnmärk yrke</button>
+
+            <h2>Förslag på frågor du kan ställa</h2>
+            <div id="modal-questions"></div>
+        </div>
+    </div>
+
+<script>
+    var savedProfessions = [];
+    var currentSortMode = 'program';
+
+    try {
+        var stored = localStorage.getItem('savedProfessions');
+        if (stored) savedProfessions = JSON.parse(stored);
+    } catch(e) {
+        console.warn("localStorage blockerad i mobilt läge, använder minnes-lagring.");
+    }
+
+    function saveToStorage() {
+        try {
+            localStorage.setItem('savedProfessions', JSON.stringify(savedProfessions));
+        } catch(e) {
+            console.warn("Kunde inte spara till localStorage.");
+        }
+    }
+
+    function applyLidingoFormatUnit() {
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        var X = Math.sqrt((width * height) / 25);
+        if (X < 80) X = 80;
+        
+        var margin = X / 4;
+        
+        document.documentElement.style.setProperty('--format-unit', X.toFixed(1) + 'px');
+        document.documentElement.style.setProperty('--margin-unit', margin.toFixed(1) + 'px');
+    }
+
+    /* Alla 11 utställare för MOA-mässan 2026 */
+    var companies = [
+        { id: 1, name: "Siggebogården, vård och omsorgsboende", professions: ["Sjuksköterska", "Undersköterska", "Fysioterapeut", "Aktivitetssamordnare"] },
+        { id: 2, name: "Högberga Gård", professions: ["Hotellreceptionist", "Kock", "Sommelier", "Eventansvarig"] },
+        { id: 3, name: "Skogshem & Wijk", professions: ["Konferensvärd", "Köksmästare", "Vaktmästare", "Bokningsansvarig"] },
+        { id: 4, name: "Rönneberga Konferens", professions: ["Receptionschef", "Serveringspersonal", "Anläggningstekniker"] },
+        { id: 5, name: "Arena Hotel Lidingö", professions: ["Hotellreceptionist", "Hotellstädare", "Hotellchef"] },
+        { id: 6, name: "Tallink Silja Line", professions: ["Fartygskapten", "Matros", "Intendent", "Kundtjänstmedarbetare"] },
+        { id: 7, name: "John Mattson Fastighetsföretagen", professions: ["Fastighetstekniker", "Fastighetsförvaltare", "Projektledare Bygg"] },
+        { id: 8, name: "ICA Kvantum", professions: ["Butikssäljare", "Färskvaruansvarig", "Logistikansvarig", "Butikschef"] },
+        { id: 9, name: "Försvarsmakten", professions: ["Officer", "Militär Logistiker", "Fältkock", "IT-säkerhetsspecialist", "Sjuksköterska"] },
+        { id: 10, name: "Lidingö stads Dagliga verksamhet", professions: ["Stödassistent", "Arbetsterapeut", "Handledare"] },
+        { id: 11, name: "LKF, studie- och yrkesvägledare", professions: ["Studie- och yrkesvägledare", "Projektledare Ungdom"] }
+    ];
+
+    var descriptionMap = {
+        "Sjuksköterska": "Arbetar med vård, hälsa och medicinsk behandling av patienter samt leder omvårdnadsarbetet.",
+        "Undersköterska": "Ger personlig omvårdnad, stöttar patienter i vardagen och utför grundläggande sjukvårdsuppgifter.",
+        "Fysioterapeut": "Hjälper människor att träna upp kroppens rörelseförmåga och funktion efter skada eller sjukdom.",
+        "Aktivitetssamordnare": "Planerar och leder meningsfulla aktiviteter och underhållning för boende på omsorgsboendet.",
+        "Hotellreceptionist": "Tar emot gäster, checkar in/ut, svarar på frågor och ger förstklassig service under hela vistelsen.",
+        "Kock": "Lagar god och näringsrik mat, planerar menyer och håller ordning i köket.",
+        "Sommelier": "Expert på dryckeskunskap som rekommenderar och kombinerar mat och dryck i restaurangen.",
+        "Eventansvarig": "Planerar, organiserar och genomför allt från stora bröllop till företagsevent och fester.",
+        "Konferensvärd": "Ser till att konferensgästerna har allt de behöver i salarna och att tekniken fungerar sömlöst.",
+        "Köksmästare": "Leder köksteamet, utvecklar menyn, beräknar råvaruinköp och ansvarar för matkvaliteten.",
+        "Vaktmästare": "Sköter om fastigheten, utför praktiska reparationer och löser tekniska problem på anläggningen.",
+        "Bokningsansvarig": "Hanterar alla bokningar av hotellrum och konferenslokaler samt hjälper gäster med förfrågningar.",
+        "Receptionschef": "Leder arbetet i receptionen, schemalägger personal och utvecklar den totala gästupplevelsen.",
+        "Serveringspersonal": "Dukar, tar upp beställningar och serverar mat och dryck med ett leende i restaurangen.",
+        "Anläggningstekniker": "Driftar, underhåller och optimerar alla tekniska system som värme, ventilation och el i byggnaderna.",
+        "Hotellstädare": "Ansvarar för att hotellrum och allmänna ytor är skinande rena, fräscha och välkomnande.",
+        "Hotellchef": "Har det övergripande ansvaret för hela hotellets drift, personal, ekonomi och framtida utveckling.",
+        "Fartygskapten": "Leder fartyget till sjöss och har det högsta ansvaret för passagerarnas och besättningens säkerhet.",
+        "Matros": "Arbetar praktiskt på däck med tilläggning, underhåll och säkerhetsutrustning ombord på fartyg.",
+        "Intendent": "Ansvarar för all mat, dryck, butiker och hotellservice ombord på passagerarfartyget.",
+        "Kundtjänstmedarbetare": "Hjälper kunder via telefon, mejl och chat med bokningar, information och problemlösning.",
+        "Fastighetstekniker": "Sköter den dagliga driften, underhållet och reparationerna i bostäder och lokaler.",
+        "Fastighetsförvaltare": "Ansvarar för kontakten med hyresgäster, fastighetens ekonomi och långsiktiga underhållsplaner.",
+        "Projektledare Bygg": "Leder och samordnar stora nybyggnationer och renoveringsprojekt från start till mål.",
+        "Butikssäljare": "Hjälper kunder i butiken, plockar upp varor, ställer i ordning hyllor och arbetar i kassan.",
+        "Färskvaruansvarig": "Ansvarar för utbud, kvalitet och upplägg i butikens avdelningar för chark, ost, kött och deli.",
+        "Logistikansvarig": "Sköter varuflöden, tar emot leveranser och ser till att lagret och hyllorna alltid är påfyllda.",
+        "Butikschef": "Leder hela butiksteamet, ansvarar för försäljning, budget och att butiken är inspirerande.",
+        "Officer": "Leder militära förband, utbildar soldater och planerar komplexa insatser inom Försvarsmakten.",
+        "Militär Logistiker": "Planerar och genomför transporter av mat, bränsle, ammunition och utrustning under insatser.",
+        "Fältkock": "Lagar mat åt militära förband under krävande förhållanden ute i fält.",
+        "IT-säkerhetsspecialist": "Skyddar Försvarsmaktens datanätverk, kommunikation och tekniska system mot cyberattacker.",
+        "Stödassistent": "Stöttar personer med funktionsnedsättning i deras dagliga arbete och rutiner i den dagliga verksamheten.",
+        "Arbetsterapeut": "Hjälper deltagare att träna och anpassa sina aktiviteter för att öka självständigheten i vardagen.",
+        "Handledare": "Vägleder, peppar och instruerar deltagare i deras arbetsuppgifter och projekt.",
+        "Studie- och yrkesvägledare": "Hjälper elever att utforska sina intressen, styrkor och framtida studie- och yrkesvägar.",
+        "Projektledare Ungdom": "Driver projekt och skapar mötesplatser för att stärka ungas engagemang och framtidstro på Lidingö."
+    };
+
+    var generalQuestions = [
+        "Vad är det mest oväntade eller roligaste med ditt jobb?",
+        "Vilket gymnasieprogram gick du för att hamna här?",
+        "Vilka fler yrken finns på er arbetsplats som man inte ser vid första anblicken?"
+    ];
+
+    var programMap = {
+        "Sjuksköterska": ["Vård- och omsorgsprogrammet", "Naturvetenskapsprogrammet"],
+        "Undersköterska": ["Vård- och omsorgsprogrammet"],
+        "Fysioterapeut": ["Naturvetenskapsprogrammet", "Samhällsvetenskapsprogrammet"],
+        "Aktivitetssamordnare": ["Samhällsvetenskapsprogrammet", "Hotell- och turismprogrammet"],
+        "Hotellreceptionist": ["Hotell- och turismprogrammet", "Försäljnings- och serviceprogrammet"],
+        "Kock": ["Restaurang- och livsmedelsprogrammet"],
+        "Sommelier": ["Restaurang- och livsmedelsprogrammet"],
+        "Eventansvarig": ["Försäljnings- och serviceprogrammet", "Ekonomiprogrammet"],
+        "Konferensvärd": ["Hotell- och turismprogrammet", "Försäljnings- och serviceprogrammet"],
+        "Köksmästare": ["Restaurang- och livsmedelsprogrammet"],
+        "Vaktmästare": ["Hantverksprogrammet", "El- och energiprogrammet"],
+        "Bokningsansvarig": ["Hotell- och turismprogrammet", "Ekonomiprogrammet"],
+        "Receptionschef": ["Hotell- och turismprogrammet", "Ekonomiprogrammet"],
+        "Serveringspersonal": ["Restaurang- och livsmedelsprogrammet"],
+        "Anläggningstekniker": ["El- och energiprogrammet", "Teknikprogrammet"],
+        "Hotellstädare": ["Hotell- och turismprogrammet"],
+        "Hotellchef": ["Ekonomiprogrammet", "Hotell- och turismprogrammet"],
+        "Fartygskapten": ["Sjöfartsutbildningen", "Teknikprogrammet"],
+        "Matros": ["Sjöfartsutbildningen"],
+        "Intendent": ["Hotell- och turismprogrammet", "Ekonomiprogrammet"],
+        "Kundtjänstmedarbetare": ["Försäljnings- och serviceprogrammet"],
+        "Fastighetstekniker": ["El- och energiprogrammet", "VVS- och fastighetsprogrammet"],
+        "Fastighetsförvaltare": ["Ekonomiprogrammet", "Teknikprogrammet"],
+        "Projektledare Bygg": ["Bygg- och anläggningsprogrammet", "Teknikprogrammet"],
+        "Butikssäljare": ["Försäljnings- och serviceprogrammet"],
+        "Färskvaruansvarig": ["Restaurang- och livsmedelsprogrammet", "Försäljnings- och serviceprogrammet"],
+        "Logistikansvarig": ["Fordons- och transportprogrammet", "Ekonomiprogrammet"],
+        "Butikschef": ["Ekonomiprogrammet", "Försäljnings- och serviceprogrammet"],
+        "Officer": ["Samhällsvetenskapsprogrammet", "Naturvetenskapsprogrammet", "Teknikprogrammet"],
+        "Militär Logistiker": ["Fordons- och transportprogrammet", "Ekonomiprogrammet"],
+        "Fältkock": ["Restaurang- och livsmedelsprogrammet"],
+        "IT-säkerhetsspecialist": ["Teknikprogrammet", "El- och energiprogrammet"],
+        "Stödassistent": ["Vård- och omsorgsprogrammet", "Barn- och fritidsprogrammet"],
+        "Arbetsterapeut": ["Naturvetenskapsprogrammet", "Samhällsvetenskapsprogrammet"],
+        "Handledare": ["Barn- och fritidsprogrammet", "Samhällsvetenskapsprogrammet"],
+        "Studie- och yrkesvägledare": ["Samhällsvetenskapsprogrammet", "Humanistiska programmet"],
+        "Projektledare Ungdom": ["Samhällsvetenskapsprogrammet", "Barn- och fritidsprogrammet"]
+    };
+
+    var currentCompany = null;
+    var currentProfessionObj = null;
+
+    function init() {
+        applyLidingoFormatUnit();
+        window.addEventListener('resize', applyLidingoFormatUnit);
+        window.addEventListener('orientationchange', applyLidingoFormatUnit);
+
+        updateSavedCount();
+        renderCompanyList();
+    }
+
+    function renderCompanyList() {
+        var compList = document.getElementById('company-list');
+        if (compList) {
+            compList.innerHTML = '';
+            companies.forEach(function(c) {
+                var div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = '<div><h3>' + c.name + '</h3></div><span class="lidingo-link" style="margin-top:10px;">Se yrken i montern &rarr;</span>';
+                div.onclick = function() { showProfessions(c.id); };
+                compList.appendChild(div);
+            });
+        }
+    }
+
+    function showCompanies() {
+        document.getElementById('view-companies').style.display = 'grid';
+        document.getElementById('view-professions').style.display = 'none';
+        document.getElementById('view-saved').style.display = 'none';
+        
+        var navExp = document.getElementById('nav-explore');
+        var navSav = document.getElementById('nav-saved');
+        if (navExp) navExp.className = 'active';
+        if (navSav) navSav.className = '';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function showProfessions(companyId) {
+        currentCompany = companies.find(function(c) { return c.id === companyId; });
+        if (!currentCompany) return;
+        
+        var titleElem = document.getElementById('current-company-title');
+        if (titleElem) titleElem.innerText = currentCompany.name;
+        
+        var profList = document.getElementById('profession-list');
+        if (profList) {
+            profList.innerHTML = '';
+            currentCompany.professions.forEach(function(p) {
+                var div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = '<div><h3>' + p + '</h3><p style="font-size: 11.7px; color: #002649;">Klicka för fakta, frågor & gymnasievägar</p></div>';
+                div.onclick = function() { openModal(p, currentCompany.name); };
+                profList.appendChild(div);
+            });
+        }
+
+        document.getElementById('view-companies').style.display = 'none';
+        document.getElementById('view-professions').style.display = 'grid';
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function addCustomProfession() {
+        var input = document.getElementById('custom-profession');
+        if (!input) return;
+        var val = input.value.trim();
+        if(val && currentCompany) {
+            openModal(val, currentCompany.name, true);
+            input.value = '';
+        } else {
+            alert("Skriv in ett yrke först.");
+        }
+    }
+
+    function openModal(profession, company, isCustom) {
+        isCustom = isCustom || false;
+        currentProfessionObj = { profession: profession, company: company };
+        
+        var mTitle = document.getElementById('modal-title');
+        var mComp = document.getElementById('modal-company');
+        if (mTitle) mTitle.innerText = profession + (isCustom ? " (Eget tillägg)" : "");
+        if (mComp) mComp.innerText = "Monter: " + company;
+        
+        var descSection = document.getElementById('desc-section');
+        var descElem = document.getElementById('modal-description');
+
+        if (isCustom) {
+            // Ta bort hela beskrivningsfältet för egna tillägg
+            if (descSection) descSection.style.display = 'none';
+            
+            // Bevarad uppmaning direkt vid skapandet i montern
+            var mProgCustom = document.getElementById('modal-programs');
+            if (mProgCustom) {
+                mProgCustom.innerHTML = '<span class="program-tag-light" style="display:block; padding:10px; line-height:1.4;">Kontakta SYV för bästa väg eller fråga de som står i montern!</span>';
+            }
+        } else {
+            // Visa beskrivningsfältet för vanliga yrken
+            if (descSection) descSection.style.display = 'block';
+            if (descElem) {
+                descElem.innerText = descriptionMap[profession] || "Detta är ett unikt yrke på arbetsplatsen. Ställ isbrytarfrågorna nedan för att få reda på mer om vad jobbet innebär!";
+            }
+
+            var programs = programMap[profession] || ["Kontakta SYV för bästa väg!", "Kräver ofta yrkeshögskola eller högskola"];
+            var mProg = document.getElementById('modal-programs');
+            if (mProg) {
+                mProg.innerHTML = programs.map(function(prog) {
+                    return '<span class="program-tag">' + prog + '</span>';
+                }).join('');
+            }
+        }
+        
+        var mQuest = document.getElementById('modal-questions');
+        if (mQuest) {
+            mQuest.innerHTML = generalQuestions.map(function(q) {
+                return '<div class="question-box">"' + q + '"</div>';
+            }).join('');
+        }
+        
+        updateStarButton();
+        var modal = document.getElementById('modal');
+        if (modal) modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        if (modal) modal.style.display = 'none';
+    }
+
+    function toggleSaveProfession() {
+        var index = savedProfessions.findIndex(function(p) { 
+            return p.profession === currentProfessionObj.profession && p.company === currentProfessionObj.company; 
+        });
+        if (index > -1) {
+            savedProfessions.splice(index, 1);
+        } else {
+            savedProfessions.push(currentProfessionObj);
+        }
+        saveToStorage();
+        updateStarButton();
+        updateSavedCount();
+    }
+
+    function removeProfessionDirectly(profession, company) {
+        var index = savedProfessions.findIndex(function(p) { 
+            return p.profession === profession && p.company === company; 
+        });
+        if (index > -1) {
+            savedProfessions.splice(index, 1);
+            saveToStorage();
+            updateSavedCount();
+            showSaved();
+        }
+    }
+
+    function updateStarButton() {
+        var btn = document.getElementById('star-btn');
+        if (!btn || !currentProfessionObj) return;
+        
+        var isSaved = savedProfessions.some(function(p) { 
+            return p.profession === currentProfessionObj.profession && p.company === currentProfessionObj.company; 
+        });
+        
+        if (isSaved) {
+            btn.innerHTML = "❌ Ta bort stjärnmärkning";
+            btn.style.setProperty('background-color', '#e0e0e0', 'important');
+            btn.style.setProperty('background', '#e0e0e0', 'important');
+            btn.style.setProperty('color', '#333333', 'important');
+        } else {
+            btn.innerHTML = "⭐ Stjärnmärk yrke";
+            btn.style.setProperty('background-color', '#FFD700', 'important');
+            btn.style.setProperty('background', '#FFD700', 'important');
+            btn.style.setProperty('color', '#1a1a1a', 'important');
+        }
+    }
+
+    function updateSavedCount() {
+        var countElem = document.getElementById('saved-count');
+        if (countElem) countElem.innerText = savedProfessions.length;
+    }
+
+    function setSortMode(mode) {
+        currentSortMode = mode;
+        var btnProg = document.getElementById('toggle-program');
+        var btnProf = document.getElementById('toggle-profession');
+        if (mode === 'program') {
+            if (btnProg) btnProg.className = 'toggle-btn active';
+            if (btnProf) btnProf.className = 'toggle-btn';
+        } else {
+            if (btnProg) btnProg.className = 'toggle-btn';
+            if (btnProf) btnProf.className = 'toggle-btn active';
+        }
+        showSaved();
+    }
+
+    function showSaved() {
+        document.getElementById('view-companies').style.display = 'none';
+        document.getElementById('view-professions').style.display = 'none';
+        document.getElementById('view-saved').style.display = 'grid';
+        
+        var navExp = document.getElementById('nav-explore');
+        var navSav = document.getElementById('nav-saved');
+        if (navExp) navExp.className = '';
+        if (navSav) navSav.className = 'active';
+        
+        var savedList = document.getElementById('saved-list');
+        if (!savedList) return;
+        savedList.innerHTML = '';
+        
+        if (savedProfessions.length === 0) {
+            savedList.innerHTML = "<p class='full-width' style='padding: 20px; text-align: center; color: #002649;'>Du har inte stjärnmärkt några yrken än. Klicka på 🔍 Utforska i toppen för att hitta yrken!</p>";
+            return;
+        }
+
+        if (currentSortMode === 'program') {
+            // Sorterat på Gymnasieprogram (Rensad fallback till enbart SYV för efterhandsvisning)
+            var groupedByProgram = {};
+
+            savedProfessions.forEach(function(item) {
+                var programs = programMap[item.profession] || ["Kontakta SYV för bästa väg!"];
+                programs.forEach(function(prog) {
+                    if (!groupedByProgram[prog]) {
+                        groupedByProgram[prog] = [];
+                    }
+                    if (!groupedByProgram[prog].some(function(p) { return p.profession === item.profession && p.company === item.company; })) {
+                        groupedByProgram[prog].push(item);
+                    }
+                });
+            });
+
+            Object.keys(groupedByProgram).sort().forEach(function(programName) {
+                var groupHeader = document.createElement('div');
+                groupHeader.className = 'program-group-title';
+                groupHeader.innerText = programName;
+                savedList.appendChild(groupHeader);
+
+                var grid = document.createElement('div');
+                grid.className = 'card-grid';
+
+                groupedByProgram[programName].forEach(function(p) {
+                    var div = document.createElement('div');
+                    div.className = 'card';
+                    div.style.borderLeftColor = '#f59e0b';
+                    
+                    var cardHeader = document.createElement('div');
+                    cardHeader.className = 'saved-card-header';
+                    
+                    var titleText = document.createElement('div');
+                    titleText.innerHTML = '<h3>' + p.profession + '</h3><p style="font-size: 11.7px; color: #002649;">Företag: ' + p.company + '</p>';
+                    
+                    var removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-btn-inline';
+                    removeBtn.innerText = '🗑️ Ta bort';
+                    removeBtn.onclick = function(e) {
+                        e.stopPropagation();
+                        removeProfessionDirectly(p.profession, p.company);
+                    };
+
+                    cardHeader.appendChild(titleText);
+                    cardHeader.appendChild(removeBtn);
+                    div.appendChild(cardHeader);
+
+                    grid.appendChild(div);
+                });
+
+                savedList.appendChild(grid);
+            });
+
+        } else {
+            // Sorterat på Yrken (Rensad fallback till enbart SYV för efterhandsvisning)
+            var grid = document.createElement('div');
+            grid.className = 'card-grid';
+
+            savedProfessions.forEach(function(p) {
+                var programs = programMap[p.profession] || ["Kontakta SYV för bästa väg!"];
+                var div = document.createElement('div');
+                div.className = 'card';
+                div.style.borderLeftColor = '#f59e0b';
+                
+                var cardHeader = document.createElement('div');
+                cardHeader.className = 'saved-card-header';
+                
+                var titleText = document.createElement('div');
+                var programTags = programs.map(function(prog) {
+                    return '<span class="program-tag-light">' + prog + '</span>';
+                }).join(' ');
+
+                titleText.innerHTML = '<h3>' + p.profession + '</h3>' +
+                    '<p style="font-size: 11.7px; color: #002649; margin-bottom:8px;">Företag: ' + p.company + '</p>' +
+                    '<div>' + programTags + '</div>';
+                
+                var removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-btn-inline';
+                removeBtn.innerText = '🗑️ Ta bort';
+                removeBtn.onclick = function(e) {
+                    e.stopPropagation();
+                    removeProfessionDirectly(p.profession, p.company);
+                };
+
+                cardHeader.appendChild(titleText);
+                cardHeader.appendChild(removeBtn);
+                div.appendChild(cardHeader);
+
+                grid.appendChild(div);
+            });
+
+            savedList.appendChild(grid);
+        }
+    }
+
+    function generateEmail() {
+        if (savedProfessions.length === 0) {
+            alert("Du måste stjärnmärka några yrken först.");
+            return;
+        }
+        
+        var lines = [];
+        lines.push("Hej!");
+        lines.push("");
+        lines.push("Här är min personliga sammanställning över intressanta yrken från MOA-mässan 2026 i Lidingö stadshus.");
+        lines.push("");
+        lines.push("--------------------------------------------------");
+        lines.push("1. SORTERAT EFTER GYMNASIEPROGRAM");
+        lines.push("--------------------------------------------------");
+        lines.push("");
+
+        var groupedByProgram = {};
+        savedProfessions.forEach(function(item) {
+            var programs = programMap[item.profession] || ["Kontakta SYV för bästa väg!"];
+            programs.forEach(function(prog) {
+                if (!groupedByProgram[prog]) groupedByProgram[prog] = [];
+                if (!groupedByProgram[prog].some(function(p) { return p.profession === item.profession && p.company === item.company; })) {
+                    groupedByProgram[prog].push(item);
+                }
+            });
+        });
+
+        Object.keys(groupedByProgram).sort().forEach(function(prog) {
+            lines.push(prog.toUpperCase());
+            groupedByProgram[prog].forEach(function(p) {
+                lines.push("  • " + p.profession + " (Monter: " + p.company + ")");
+            });
+            lines.push("");
+        });
+
+        lines.push("--------------------------------------------------");
+        lines.push("2. SORTERAT EFTER YRKEN");
+        lines.push("--------------------------------------------------");
+        lines.push("");
+
+        savedProfessions.forEach(function(p) {
+            var progs = (programMap[p.profession] || ["Kontakta SYV för bästa väg!"]).join(", ");
+            lines.push(p.profession.toUpperCase() + " (Monter: " + p.company + ")");
+            lines.push("   Möjliga gymnasievägar: " + progs);
+            lines.push("");
+        });
+
+        lines.push("--------------------------------------------------");
+        lines.push("Detta är mitt personliga underlag inför mitt kommande gymnasieval.");
+        lines.push("");
+        lines.push("Med vänlig hälsning,");
+        lines.push("Elev i åk 9");
+
+        var bodyText = lines.join("%0D%0A");
+        window.location.href = "mailto:?subject=" + encodeURIComponent("Min Sammanställning - MOA-mässan 2026") + "&body=" + bodyText;
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(init, 50);
+    } else {
+        document.addEventListener('DOMContentLoaded', init);
+    }
+</script>
+</body>
+</html>

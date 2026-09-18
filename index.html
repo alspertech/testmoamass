@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     <meta name="theme-color" content="#004930">
-    <title>MOA-mässan 2026</title>
+    <title>MOA-mässan 2026 - Lidingö Stad</title>
     <style>
         :root {
             color-scheme: light;
@@ -578,18 +578,19 @@
 
     /* Alla 11 utställare för MOA-mässan 2026 */
     var companies = [
-        { id: 1, name: "Siggebogården, vård och omsorgsboende", professions: ["Sjuksköterska", "Undersköterska", "Fysioterapeut", "Aktivitetssamordnare"] },
-        { id: 2, name: "Högberga Gård", professions: ["Hotellreceptionist", "Kock", "Sommelier", "Eventansvarig"] },
-        { id: 3, name: "Skogshem & Wijk", professions: ["Konferensvärd", "Köksmästare", "Vaktmästare", "Bokningsansvarig"] },
-        { id: 4, name: "Rönneberga Konferens", professions: ["Receptionschef", "Serveringspersonal", "Anläggningstekniker"] },
-        { id: 5, name: "Arena Hotel Lidingö", professions: ["Hotellreceptionist", "Hotellstädare", "Hotellchef"] },
-        { id: 6, name: "Tallink Silja Line", professions: ["Fartygskapten", "Matros", "Intendent", "Kundtjänstmedarbetare"] },
-        { id: 7, name: "John Mattson Fastighetsföretagen", professions: ["Fastighetstekniker", "Fastighetsförvaltare", "Projektledare Bygg"] },
-        { id: 8, name: "ICA Kvantum", professions: ["Butikssäljare", "Färskvaruansvarig", "Logistikansvarig", "Butikschef"] },
-        { id: 9, name: "Försvarsmakten", professions: ["Officer", "Militär Logistiker", "Fältkock", "IT-säkerhetsspecialist", "Sjuksköterska"] },
-        { id: 10, name: "Lidingö stads Dagliga verksamhet", professions: ["Stödassistent", "Arbetsterapeut", "Handledare"] },
-        { id: 11, name: "LKF, studie- och yrkesvägledare", professions: ["Studie- och yrkesvägledare", "Projektledare Ungdom"] }
-    ];
+    { id: 1, name: "John Mattson", professions: ["Fastighetstekniker", "Förvaltare", "Projektledare"] },
+    { id: 2, name: "ICA Kvantum Lidingö", professions: ["Butikssäljare", "Kassamedarbetare", "Färskvaruansvariga", "Avdelningsansvariga", "Kallskänk/kock", "HR Ansvarig"] },
+    { id: 3, name: "Siggebogårdens vård- och omsorgsboende", professions: ["Arbetsterapeut", "Fysioterapeut", "Sjuksköterska", "Aktivitetssamordnare", "Undersköterska"] },
+    { id: 4, name: "Lidingö stads dagliga verksamheter", professions: ["Stödpedagog", "Socialpedagog", "Arbetscoach / studiecoach", "Sysselsättningshandledare"] },
+    { id: 5, name: "Storstockholms brandförsvar SSBF", professions: ["Brandman", "Brandinspektör", "Brandingenjör"] },
+    { id: 6, name: "Förskolan, Lidingö stad", professions: ["Förskollärare", "Barnskötare", "Rektor", "Biträdande rektor", "Kock", "Ekonomibiträde"] },
+    { id: 7, name: "Högberga Gård", professions: ["Hotelldirektör", "Kökschef/köksmästare", "Kockar", "Restaurangchef", "Hovmästare", "Servitörer/servitriser", "Diskare", "Husfru", "Städpersonal", "Receptionschef", "Receptionister", "Konferensbokare/innesäljare", "Konferensplanerare", "Fastighetschef", "Vaktmästare"] },
+    { id: 8, name: "Rönneberga Konferens", professions: ["Köksmästare", "Souschef", "Kallskänka", "Kock", "Restaurangchef", "Sommelier", "Hovmästare", "Servitör"] },
+    { id: 9, name: "Tallink Silja Line", professions: ["Befälhavare", "Överstyrman", "Safety Officer", "Sjuksköterska", "Matros", "Teknisk chef", "Fartygsingenjör", "Motorman", "Restaurangchef", "Kökschef", "Köksmästare", "Servitör/servitris", "Butikssäljare", "Customer Service Agent", "Social Media & Content Specialists", "Key Account Manager", "Ekonom"] },
+    { id: 10, name: "Skogshem & Wijk", professions: ["General Manager", "Kökschef/köksmästare", "Souschef", "Kockar", "Restaurangchef", "Hovmästare", "Servitörer/servitriser", "Diskare", "Städansvarig", "Städpersonal", "Hotellchef", "1:e receptionist", "Receptionister", "Försäljningschef", "Innesäljare", "Ekonomiansvarig", "Projektledare möten och event", "Fastighetschef", "Vaktmästare"] },
+    { id: 11, name: "Polismyndigheten", professions: ["Ingripandepolis", "Områdespolis", "Utredare", "Insatspolis", "Spanare", "IT-forensiker", "Barnförhörsledare", "Hundförare", "Trafikpolis", "Bombtekniker", "Analytiker"] },
+    { id: 12, name: "Försvarsmakten", professions: ["Soldat och sjöman", "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter)", "Sjukvård", "Kock", "Logistik och transport", "Underrättelse och säkerhet", "Ledning och samband", "Strid (amfibie, pansarskytte, flygbasjägare)", "Administratör", "Ingenjör", "IT-specialister", "Ekonom", "Jurist", "Mekaniker och tekniker", "Kock och logister"] }
+];
 
     var descriptionMap = {
         "Sjuksköterska": "Arbetar med vård, hälsa och medicinsk behandling av patienter samt leder omvårdnadsarbetet.",

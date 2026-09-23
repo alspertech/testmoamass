@@ -66,16 +66,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 20px; /* Ökat mellanrum till rubriken */
             position: relative;
             z-index: 2;
         }
 
         .header-logo {
-            width: 33px;
+            width: 33px; /* Något större sköld */
             height: 39px;
             fill: #ffffff !important;
-            stroke: #ffffff !important;
+            stroke: #ffffff !important; /* Tjockare konturer */
             stroke-width: 0.5px;
             stroke-linejoin: round;
             flex-shrink: 0;
@@ -122,7 +122,7 @@
         }
 
         nav.top-nav div.active { 
-            color: #002649 !important;
+            color: #002649 !important; /* Mörkblå text för aktiv nav */
             border-bottom: 4px solid #002649;
             background-color: #e6f0ed !important;
             border-radius: 8px 8px 0 0;
@@ -143,10 +143,11 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #002649 !important;
+            color: #002649 !important; /* Mörkblå */
             margin-bottom: 13px;
         }
 
+        /* Rubrik för Gymnasieprogramsgrupper */
         .program-group-title {
             font-size: 18.2px; 
             font-weight: 700;
@@ -167,10 +168,11 @@
             gap: 13px;
         }
 
+        /* Unik, tydlig bakgrund för Yrkeslistan (Mjuk varmgul med hög kontrast) */
         #view-professions {
-            background-color: #fef3c7 !important;
+            background-color: #fef3c7 !important; /* Mjuk varmgul bakgrund */
             border-radius: 20px;
-            border: none !important;
+            border: none !important; /* Ramen borttagen */
             padding: calc(var(--margin-unit) * 0.75);
             margin-top: 15px;
             margin-bottom: 25px;
@@ -213,10 +215,12 @@
             transform: scale(0.97); 
         }
 
+        /* Företagskort med grön linje (Centrumgrön) */
         #view-companies .card {
             border-left: 6.5px solid #004930 !important;
         }
 
+        /* Yrkeskort i yrkeslistan med varmgul linje */
         #view-professions .card {
             border-left: 6.5px solid #f59e0b !important;
             border-top: 1px solid #fde68a !important;
@@ -224,6 +228,7 @@
             border-bottom: 1px solid #fde68a !important;
         }
 
+        /* Yrkeskort i Mina Val med varmgul linje */
         #view-saved .card {
             border-left: 6.5px solid #f59e0b !important;
             border-top: 1px solid #fde68a !important;
@@ -231,12 +236,15 @@
             border-bottom: 1px solid #fde68a !important;
         }
 
+
+
         .card h3 {
             font-size: 18.2px;
             color: #002649 !important; 
             margin-bottom: 6.5px;
         }
 
+        /* Sorteringsväxlare i Mina Val */
         .toggle-container {
             display: flex;
             background: #ffffff;
@@ -265,6 +273,7 @@
             color: #ffffff !important;
         }
 
+        /* Tillgänglig Ta bort-knapp i Mina Val */
         .saved-card-header {
             display: flex;
             justify-content: space-between;
@@ -289,6 +298,7 @@
             background-color: #0f172a !important;
         }
 
+        /* Knappar */
         .btn { 
             display: inline-block;
             width: 100%; 
@@ -583,15 +593,60 @@
 ];
 
     var descriptionMap = {
-        "Fastighetstekniker": "En fastighetsteknik tar hand om våra hus genom systematisk tillsyn och har daglig kontakt med våra hyresgäster. Den ser till att allt fungerar som det ska och tar emot och löser felanmälningar när något har gått sönder. En Fastighetstekniker planerar och utför underhåll i husen och beställer tjänster för större underhåll och reparationer av underleverantörer.",
-        "Förvaltare": "En Förvaltare har ett helhetsansvar för flera fastigheter i ett bostadsområde. Den ansvarar för att säkerställa ekonomiskt resultat och ta affärsmässiga beslut för att skapa långsiktigt och hållbart värde i fastigheterna. En förvaltare jobbar nära andra roller både i och utanför bolaget som Fastighetstekniker, driftstekniker, projektledare, entreprenörer och leverantörer",
-        "Projektledare": "En projektledare inom Förvaltning handlar upp och projektleder förvaltningsprojekt som hyresgästanpassningar, energiprojekt, ombyggnader eller större underhållsåtgärder i fastigheterna. En projektledare ansvar för att säkerställa ekonomin och klimatpåverkan i projekt genom noggrann upphandling, uppföljning och regelefterlevnad.",
+        "Officer": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Sjukvård (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Sjukvård": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Kock (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Kock": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Logistik och transport (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Logistik och transport": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Underrättelse och säkerhet (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Underrättelse och säkerhet": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Ledning och samband (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Ledning och samband": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
+        "Strid (amfibie, pansarskytte, flygbasjägare)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl",
         "Butikssäljare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Kassamedarbetare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Färskvaruansvariga": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Avdelningsansvariga": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Kallskänk/kock": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "HR Ansvarig": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Fastighetstekniker": "En fastighetsteknik tar hand om våra hus genom systematisk tillsyn och har daglig kontakt med våra hyresgäster. Den ser till att allt fungerar som det ska och tar emot och löser felanmälningar när något har gått sönder. En Fastighetstekniker planerar och utför underhåll i husen och beställer tjänster för större underhåll och reparationer av underleverantörer.",
+        "Förvaltare": "En Förvaltare har ett helhetsansvar för flera fastigheter i ett bostadsområde. Den ansvarar för att säkerställa ekonomiskt resultat och ta affärsmässiga beslut för att skapa långsiktigt och hållbart värde i fastigheterna. En förvaltare jobbar nära andra roller både i och utanför bolaget som Fastighetstekniker, driftstekniker, projektledare, entreprenörer och leverantörer",
+        "Projektledare": "En projektledare inom Förvaltning handlar upp och projektleder förvaltningsprojekt som hyresgästanpassningar, energiprojekt, ombyggnader eller större underhållsåtgärder i fastigheterna. En projektledare ansvar för att säkerställa ekonomin och klimatpåverkan i projekt genom noggrann upphandling, uppföljning och regelefterlevnad.",
+        "Ingripandepolis": "ingriper vid brott, olyckor och nödsituationer",
+        "Områdespolis": "arbetar brottsförebyggande i ett område",
+        "Utredare": "håller förhör, samlar bevis och analyserar information",
+        "Insatspolis": "hanterar komplexa och ibland farliga insatser",
+        "Spanare": "kartlägger brottslighet och inhämtar information",
+        "IT-forensiker": "arbetar med digital kriminalteknik",
+        "Barnförhörsledare": "förhör barn som utsatts för brott",
+        "Hundförare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Trafikpolis": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Bombtekniker": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Analytiker": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "General Manager": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Kökschef/köksmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Souschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Kockar": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Restaurangchef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Hovmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Servitörer/servitriser": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Diskare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Städansvarig": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Städpersonal": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Hotellchef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "1:e receptionist": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Receptionister": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Försäljningschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Innesäljare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Ekonomiansvarig": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Projektledare möten och event": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Fastighetschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Vaktmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Arbetsterapeut": "Bedömer och stöttar människor att skapa en fungerande vardag genom att tex. anpassa och prova ut tekniska hjälpmedel.",
         "Fysioterapeut": "Hjälper människor att träna upp kroppens rörelseförmåga och funktion efter skada eller sjukdom.",
         "Sjuksköterska": "Arbetar med vård, hälsa och medicinsk behandling av patienter samt leder omvårdnadsarbetet.",
@@ -608,102 +663,59 @@
         "Barnskötare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Rektor": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Biträdande rektor": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Kock": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Ekonomibiträde": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Hotelldirektör": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Hotellchef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Husfru": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Receptionschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Konferensbokare/innesäljare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Konferensplanerare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Kökschef/köksmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Kockar": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Restaurangchef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Hovmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Servitörer/servitriser": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Diskare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Husfru": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Städpersonal": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Receptionister": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Fastighetschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Vaktmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Köksmästare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Souschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Kallskänka": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Sommelier": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Servitör": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Befälhavare (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Befälhavare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Överstyrman (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Överstyrman": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Safety Officer (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Matros (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Safety Officer": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Sjuksköterska (sjö)": "Arbetar med vård, hälsa och medicinsk behandling av patienter samt leder omvårdnadsarbetet.",
+        "Matros (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Matros": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Teknisk chef (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Teknisk chef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Fartygsingenjör (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Fartygsingenjör": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Motorman (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Motorman": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Restaurangchef (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Kökschef (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Kökschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Köksmästare (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Servitör/servitris (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Servitör/servitris": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Butikssäljare (sjö)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Customer Service Agent (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Social Media & Content Specialists (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Key Account Manager (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ekonom (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "General Manager": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Städansvarig": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "1:e receptionist": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Försäljningschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Innesäljare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ekonomiansvarig": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Projektledare möten och event": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ingripandepolis": "ingriper vid brott, olyckor och nödsituationer",
-        "Områdespolis": "arbetar brottsförebyggande i ett område",
-        "Utredare": "håller förhör, samlar bevis och analyserar information",
-        "Insatspolis": "hanterar komplexa och ibland farliga insatser",
-        "Spanare": "kartlägger brottslighet och inhämtar information",
-        "IT-forensiker": "arbetar med digital kriminalteknik",
-        "Barnförhörsledare": "förhör barn som utsatts för brott",
-        "Hundförare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Trafikpolis": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Bombtekniker": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Analytiker": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Officer": "Officerare leder och utbildar soldater och sjömän samt planerar och genomför militära insatser.",
-        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Sjukvård (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Kock (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Logistik och transport (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Underrättelse och säkerhet (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Ledning och samband (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Administratör (Civila yrken)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ingenjör (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "IT-specialister (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Ekonom (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Jurist (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Mekaniker och tekniker (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Kock och logister (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Befälhavare": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Överstyrman": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Safety Officer": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Matros": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Teknisk chef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Fartygsingenjör": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Motorman": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Kökschef": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Servitör/servitris": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Customer Service Agent": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Social Media & Content Specialists (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Social Media & Content Specialists": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Key Account Manager (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
         "Key Account Manager": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ekonom": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Tekniker och mekaniker": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Sjukvård": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Logistik och transport": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Underrättelse och säkerhet": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Ledning och samband": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Strid": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
-        "Administratör": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
-        "Ingenjör": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "IT-specialister": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten.",
-        "Jurist": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten."
+        "Ekonom (land)": "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få reda på mer om vad jobbet innebär.",
+        "Ekonom": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Administratör (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Administratör": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Ingenjör (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Ingenjör": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "IT-specialister (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "IT-specialister": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Ekonom (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Jurist (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Jurist": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Mekaniker och tekniker (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Mekaniker och tekniker": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Kock och logister (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera.",
+        "Kock och logister": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera."
     };
 
     var generalQuestions = [
@@ -713,24 +725,53 @@
     ];
 
     var programMap = {
-        "Fastighetstekniker": [
-                "El- och energiprogrammet",
-                "Industritekniska programmet",
-                "VVS- och fastighetsprogrammet",
-                "Bygg- och anläggningsprogrammet"
+        "Officer": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
-        "Förvaltare": [
-                "Ekonomiprogrammet",
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
         ],
-        "Projektledare": [
-                "Bygg- och anläggningsprogrammet",
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Sjukvård (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Sjukvård": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Kock (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Kock": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Logistik och transport (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Logistik och transport": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Underrättelse och säkerhet (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Underrättelse och säkerhet": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Ledning och samband (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Ledning och samband": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Strid (amfibie, pansarskytte, flygbasjägare)": [
+                "godkänd grundutbildning med värnplikt"
         ],
         "Butikssäljare": [
-                "Försäljning- och serviceprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Kassamedarbetare": [
                 "Försäljning- och serviceprogrammet"
@@ -747,6 +788,113 @@
         "HR Ansvarig": [
                 "Eftergymnasial utbildning"
         ],
+        "Fastighetstekniker": [
+                "El- och energiprogrammet",
+                "Industritekniska programmet",
+                "VVS- och fastighetsprogrammet",
+                "Bygg- och anläggningsprogrammet"
+        ],
+        "Förvaltare": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Projektledare": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Ingripandepolis": [
+                "Eftergymnasial utbildning"
+        ],
+        "Områdespolis": [
+                "Eftergymnasial utbildning"
+        ],
+        "Utredare": [
+                "Eftergymnasial utbildning"
+        ],
+        "Insatspolis": [
+                "Eftergymnasial utbildning"
+        ],
+        "Spanare": [
+                "Eftergymnasial utbildning"
+        ],
+        "IT-forensiker": [
+                "Eftergymnasial utbildning"
+        ],
+        "Barnförhörsledare": [
+                "Eftergymnasial utbildning"
+        ],
+        "Hundförare": [
+                "Eftergymnasial utbildning"
+        ],
+        "Trafikpolis": [
+                "Eftergymnasial utbildning"
+        ],
+        "Bombtekniker": [
+                "Eftergymnasial utbildning"
+        ],
+        "Analytiker": [
+                "Eftergymnasial utbildning"
+        ],
+        "General Manager": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Kökschef/köksmästare": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Souschef": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Kockar": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Restaurangchef": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Hovmästare": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Servitörer/servitriser": [
+                "Restaurang- och livsmedelsprogrammet"
+        ],
+        "Diskare": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Städansvarig": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Städpersonal": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Hotellchef": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "1:e receptionist": [
+                "Hotell- och turismprogrammet"
+        ],
+        "Receptionister": [
+                "Hotell- och turismprogrammet"
+        ],
+        "Försäljningschef": [
+                "Försäljning- och serviceprogrammet"
+        ],
+        "Innesäljare": [
+                "Försäljning- och serviceprogrammet"
+        ],
+        "Ekonomiansvarig": [
+                "Eftergymnasial utbildning"
+        ],
+        "Projektledare möten och event": [
+                "Hotell- och turismprogrammet",
+                "Försäljning- och serviceprogrammet"
+        ],
+        "Fastighetschef": [
+                "El- och energiprogrammet",
+                "Industritekniska programmet",
+                "VVS- och fastighetsprogrammet"
+        ],
+        "Vaktmästare": [
+                "El- och energiprogrammet",
+                "Industritekniska programmet",
+                "VVS- och fastighetsprogrammet"
+        ],
         "Arbetsterapeut": [
                 "Eftergymnasial utbildning"
         ],
@@ -754,7 +902,7 @@
                 "Eftergymnasial utbildning"
         ],
         "Sjuksköterska": [
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Aktivitetssamordnare": [
                 "Vård- och omsorgsprogrammet"
@@ -796,17 +944,14 @@
         "Biträdande rektor": [
                 "Eftergymnasial utbildning"
         ],
-        "Kock": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
         "Ekonomibiträde": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Hotelldirektör": [
-                "Hotell- och turismprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
-        "Hotellchef": [
-                "Hotell- och turismprogrammet"
+        "Husfru": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Receptionschef": [
                 "Hotell- och turismprogrammet"
@@ -817,204 +962,124 @@
         "Konferensplanerare": [
                 "Hotell- och turismprogrammet"
         ],
-        "Kökschef/köksmästare": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Kockar": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Restaurangchef": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Hovmästare": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Servitörer/servitriser": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Diskare": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Husfru": [
-                "Hotell- och turismprogrammet"
-        ],
-        "Städpersonal": [
-                "Hotell- och turismprogrammet"
-        ],
-        "Receptionister": [
-                "Hotell- och turismprogrammet"
-        ],
-        "Fastighetschef": [
-                "El- och energiprogrammet",
-                "Industritekniska programmet",
-                "VVS- och fastighetsprogrammet"
-        ],
-        "Vaktmästare": [
-                "El- och energiprogrammet",
-                "Industritekniska programmet",
-                "VVS- och fastighetsprogrammet"
-        ],
         "Köksmästare": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Souschef": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Kallskänka": [
                 "Restaurang- och livsmedelsprogrammet"
         ],
         "Sommelier": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Servitör": [
                 "Restaurang- och livsmedelsprogrammet"
         ],
         "Befälhavare (sjö)": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Befälhavare": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Överstyrman (sjö)": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Överstyrman": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Safety Officer (sjö)": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
-        "Matros (sjö)": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
+        "Safety Officer": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Sjuksköterska (sjö)": [
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Matros (sjö)": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Matros": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Teknisk chef (sjö)": [
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Teknisk chef": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Fartygsingenjör (sjö)": [
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Fartygsingenjör": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Motorman (sjö)": [
-                "Sjöfartsutbildningen",
-                "El- och energiprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Motorman": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Restaurangchef (sjö)": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Kökschef (sjö)": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Kökschef": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Köksmästare (sjö)": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Servitör/servitris (sjö)": [
-                "Restaurang- och livsmedelsprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Servitör/servitris": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Butikssäljare (sjö)": [
-                "Försäljning- och serviceprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Customer Service Agent (land)": [
-                "Försäljning- och serviceprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Customer Service Agent": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Social Media & Content Specialists (land)": [
-                "Försäljning- och serviceprogrammet"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Social Media & Content Specialists": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Key Account Manager (land)": [
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Key Account Manager": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Ekonom (land)": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Ekonom": [
                 "Eftergymnasial utbildning"
-        ],
-        "General Manager": [
-                "Hotell- och turismprogrammet",
-                "Eftergymnasial utbildning"
-        ],
-        "Städansvarig": [
-                "Hotell- och turismprogrammet"
-        ],
-        "1:e receptionist": [
-                "Hotell- och turismprogrammet"
-        ],
-        "Försäljningschef": [
-                "Försäljning- och serviceprogrammet"
-        ],
-        "Innesäljare": [
-                "Försäljning- och serviceprogrammet"
-        ],
-        "Ekonomiansvarig": [
-                "Eftergymnasial utbildning"
-        ],
-        "Projektledare möten och event": [
-                "Hotell- och turismprogrammet",
-                "Försäljning- och serviceprogrammet"
-        ],
-        "Ingripandepolis": [
-                "Eftergymnasial utbildning"
-        ],
-        "Områdespolis": [
-                "Eftergymnasial utbildning"
-        ],
-        "Utredare": [
-                "Eftergymnasial utbildning"
-        ],
-        "Insatspolis": [
-                "Eftergymnasial utbildning"
-        ],
-        "Spanare": [
-                "Eftergymnasial utbildning"
-        ],
-        "IT-forensiker": [
-                "Eftergymnasial utbildning"
-        ],
-        "Barnförhörsledare": [
-                "Eftergymnasial utbildning"
-        ],
-        "Hundförare": [
-                "Eftergymnasial utbildning"
-        ],
-        "Trafikpolis": [
-                "Eftergymnasial utbildning"
-        ],
-        "Bombtekniker": [
-                "Eftergymnasial utbildning"
-        ],
-        "Analytiker": [
-                "Eftergymnasial utbildning"
-        ],
-        "Officer": [
-                "Eftergymnasial utbildning"
-        ],
-        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Sjukvård (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Kock (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Logistik och transport (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Underrättelse och säkerhet (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Ledning och samband (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": [
-                "godkänd grundutbildning med värnplikt"
         ],
         "Administratör (Civila yrken)": [
-                "Försäljning- och serviceprogrammet",
-                "Eftergymnasial utbildning"
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
+        ],
+        "Administratör": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ],
         "Ingenjör (Civila yrken)": [
                 "Eftergymnasial utbildning"
         ],
+        "Ingenjör": [
+                "Eftergymnasial utbildning"
+        ],
         "IT-specialister (Civila yrken)": [
+                "Eftergymnasial utbildning"
+        ],
+        "IT-specialister": [
                 "Eftergymnasial utbildning"
         ],
         "Ekonom (Civila yrken)": [
@@ -1023,7 +1088,15 @@
         "Jurist (Civila yrken)": [
                 "Eftergymnasial utbildning"
         ],
+        "Jurist": [
+                "Eftergymnasial utbildning"
+        ],
         "Mekaniker och tekniker (Civila yrken)": [
+                "El- och energiprogrammet",
+                "Industritekniska programmet",
+                "VVS- och fastighetsprogrammet"
+        ],
+        "Mekaniker och tekniker": [
                 "El- och energiprogrammet",
                 "Industritekniska programmet",
                 "VVS- och fastighetsprogrammet"
@@ -1031,217 +1104,135 @@
         "Kock och logister (Civila yrken)": [
                 "Restaurang- och livsmedelsprogrammet"
         ],
-        "Befälhavare": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
-        ],
-        "Överstyrman": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
-        ],
-        "Safety Officer": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
-        ],
-        "Matros": [
-                "Sjöfartsutbildningen",
-                "Teknikprogrammet"
-        ],
-        "Teknisk chef": [
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
-        ],
-        "Fartygsingenjör": [
-                "Teknikprogrammet",
-                "Eftergymnasial utbildning"
-        ],
-        "Motorman": [
-                "Sjöfartsutbildningen",
-                "El- och energiprogrammet"
-        ],
-        "Kökschef": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Servitör/servitris": [
-                "Restaurang- och livsmedelsprogrammet"
-        ],
-        "Customer Service Agent": [
-                "Försäljning- och serviceprogrammet"
-        ],
-        "Social Media & Content Specialists": [
-                "Försäljning- och serviceprogrammet"
-        ],
-        "Key Account Manager": [
-                "Eftergymnasial utbildning"
-        ],
-        "Ekonom": [
-                "Eftergymnasial utbildning"
-        ],
-        "Tekniker och mekaniker": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Sjukvård": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Logistik och transport": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Underrättelse och säkerhet": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Ledning och samband": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Strid": [
-                "godkänd grundutbildning med värnplikt"
-        ],
-        "Administratör": [
-                "Försäljning- och serviceprogrammet",
-                "Eftergymnasial utbildning"
-        ],
-        "Ingenjör": [
-                "Eftergymnasial utbildning"
-        ],
-        "IT-specialister": [
-                "Eftergymnasial utbildning"
-        ],
-        "Jurist": [
-                "Eftergymnasial utbildning"
-        ],
-        "Mekaniker och tekniker": [
-                "El- och energiprogrammet",
-                "Industritekniska programmet",
-                "VVS- och fastighetsprogrammet"
-        ],
         "Kock och logister": [
                 "Restaurang- och livsmedelsprogrammet"
         ]
 };
 
     var programDetailsMap = {
-        "Fastighetstekniker": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Förvaltare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Projektledare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Butikssäljare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kassamedarbetare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Färskvaruansvariga": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Avdelningsansvariga": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kallskänk/kock": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "HR Ansvarig": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Arbetsterapeut": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Fysioterapeut": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Sjuksköterska": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Aktivitetssamordnare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Undersköterska": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Stödpedagog": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Socialpedagog": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Arbetscoach / studiecoach": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Sysselsättningshandledare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Brandman": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Brandinspektör": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Brandingenjör": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Förskollärare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Barnskötare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Rektor": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Biträdande rektor": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Kock": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Ekonomibiträde": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Hotelldirektör": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Hotellchef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Receptionschef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Konferensbokare/innesäljare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Konferensplanerare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kökschef/köksmästare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kockar": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Restaurangchef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Hovmästare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Servitörer/servitriser": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Diskare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Husfru": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Städpersonal": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Receptionister": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Fastighetschef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Vaktmästare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Köksmästare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Souschef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kallskänka": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Sommelier": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Servitör": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Befälhavare (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Överstyrman (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Safety Officer (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Matros (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Sjuksköterska (sjö)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Teknisk chef (sjö)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Fartygsingenjör (sjö)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Motorman (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Restaurangchef (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kökschef (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Köksmästare (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Servitör/servitris (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Butikssäljare (sjö)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Customer Service Agent (land)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Social Media & Content Specialists (land)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Key Account Manager (land)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Ekonom (land)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "General Manager": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Städansvarig": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "1:e receptionist": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Försäljningschef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Innesäljare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Ekonomiansvarig": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Projektledare möten och event": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Ingripandepolis": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Områdespolis": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Utredare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Insatspolis": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Spanare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "IT-forensiker": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Barnförhörsledare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Hundförare": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Trafikpolis": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Bombtekniker": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Analytiker": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Officer": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Sjukvård (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Kock (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Logistik och transport (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Underrättelse och säkerhet (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Ledning och samband (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Administratör (Civila yrken)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Ingenjör (Civila yrken)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "IT-specialister (Civila yrken)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Ekonom (Civila yrken)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Jurist (Civila yrken)": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Mekaniker och tekniker (Civila yrken)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kock och logister (Civila yrken)": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Befälhavare": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Överstyrman": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Safety Officer": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Matros": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Teknisk chef": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Fartygsingenjör": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Motorman": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kökschef": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Servitör/servitris": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Customer Service Agent": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Social Media & Content Specialists": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Key Account Manager": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Ekonom": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Tekniker och mekaniker": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Sjukvård": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Logistik och transport": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Underrättelse och säkerhet": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Ledning och samband": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Strid": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt. De flesta befattningar behöver både soldater, gruppchefer och plutonsbefäl.",
-        "Administratör": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Ingenjör": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "IT-specialister": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Jurist": "Eftergymnasial utbildning Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Mekaniker och tekniker": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
-        "Kock och logister": "Möjliga gymnasieprogram Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program."
+        "Officer": "",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter)": "",
+        "Sjukvård (Soldat och sjöman)": "",
+        "Sjukvård": "",
+        "Kock (Soldat och sjöman)": "",
+        "Kock": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Logistik och transport (Soldat och sjöman)": "",
+        "Logistik och transport": "",
+        "Underrättelse och säkerhet (Soldat och sjöman)": "",
+        "Underrättelse och säkerhet": "",
+        "Ledning och samband (Soldat och sjöman)": "",
+        "Ledning och samband": "",
+        "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)": "",
+        "Strid (amfibie, pansarskytte, flygbasjägare)": "",
+        "Butikssäljare": "",
+        "Kassamedarbetare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Färskvaruansvariga": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Avdelningsansvariga": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Kallskänk/kock": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "HR Ansvarig": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Fastighetstekniker": "",
+        "Förvaltare": "",
+        "Projektledare": "",
+        "Ingripandepolis": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Områdespolis": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Utredare": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Insatspolis": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Spanare": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "IT-forensiker": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Barnförhörsledare": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Hundförare": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Trafikpolis": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Bombtekniker": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Analytiker": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "General Manager": "",
+        "Kökschef/köksmästare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Souschef": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Kockar": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Restaurangchef": "",
+        "Hovmästare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Servitörer/servitriser": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Diskare": "",
+        "Städansvarig": "",
+        "Städpersonal": "",
+        "Hotellchef": "",
+        "1:e receptionist": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Receptionister": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Försäljningschef": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Innesäljare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Ekonomiansvarig": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Projektledare möten och event": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Fastighetschef": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Vaktmästare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Arbetsterapeut": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Fysioterapeut": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Sjuksköterska": "",
+        "Aktivitetssamordnare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Undersköterska": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Stödpedagog": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Socialpedagog": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Arbetscoach / studiecoach": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Sysselsättningshandledare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Brandman": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Brandinspektör": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Brandingenjör": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Förskollärare": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Barnskötare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Rektor": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Biträdande rektor": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Ekonomibiträde": "",
+        "Hotelldirektör": "",
+        "Husfru": "",
+        "Receptionschef": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Konferensbokare/innesäljare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Konferensplanerare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Köksmästare": "",
+        "Kallskänka": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Sommelier": "",
+        "Servitör": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Befälhavare (sjö)": "",
+        "Befälhavare": "",
+        "Överstyrman (sjö)": "",
+        "Överstyrman": "",
+        "Safety Officer (sjö)": "",
+        "Safety Officer": "",
+        "Sjuksköterska (sjö)": "",
+        "Matros (sjö)": "",
+        "Matros": "",
+        "Teknisk chef (sjö)": "",
+        "Teknisk chef": "",
+        "Fartygsingenjör (sjö)": "",
+        "Fartygsingenjör": "",
+        "Motorman (sjö)": "",
+        "Motorman": "",
+        "Restaurangchef (sjö)": "",
+        "Kökschef (sjö)": "",
+        "Kökschef": "",
+        "Köksmästare (sjö)": "",
+        "Servitör/servitris (sjö)": "",
+        "Servitör/servitris": "",
+        "Butikssäljare (sjö)": "",
+        "Customer Service Agent (land)": "",
+        "Customer Service Agent": "",
+        "Social Media & Content Specialists (land)": "",
+        "Social Media & Content Specialists": "",
+        "Key Account Manager (land)": "",
+        "Key Account Manager": "",
+        "Ekonom (land)": "",
+        "Ekonom": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Administratör (Civila yrken)": "",
+        "Administratör": "",
+        "Ingenjör (Civila yrken)": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Ingenjör": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "IT-specialister (Civila yrken)": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "IT-specialister": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Ekonom (Civila yrken)": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Jurist (Civila yrken)": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Jurist": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
+        "Mekaniker och tekniker (Civila yrken)": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Mekaniker och tekniker": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Kock och logister (Civila yrken)": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Kock och logister": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program."
     };
 
     var currentCompany = null;

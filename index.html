@@ -1358,15 +1358,17 @@
             var programs = programMap[profession] || ["Kontakta SYV för bästa väg!"];
             var programDetails = programDetailsMap[profession] || "";
 
-            var htmlContent = programs.map(function(prog) {
-                return '<span class="program-tag">' + prog + '</span>';
-            }).join('');
+            var htmlContent = "";
 
             if (programDetails) {
-                htmlContent += '<div class="job-description-box" style="margin-top:12px; background:#e6f0ed !important; border-left:4px solid #348275;">' +
+                htmlContent += '<div class="job-description-box" style="margin-bottom:14px; background:#e6f0ed !important; border-left:4px solid #348275;">' +
                     '<strong style="color:#002649;">Om utbildningsvägen:</strong><br>' + programDetails + 
                     '</div>';
             }
+
+            htmlContent += programs.map(function(prog) {
+                return '<span class="program-tag">' + prog + '</span>';
+            }).join('');
 
             if (mProg) {
                 mProg.innerHTML = htmlContent;

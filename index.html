@@ -1339,9 +1339,18 @@
 
             var htmlContent = "";
 
-            if (programDetails) {
+            if (programDetails && programDetails.trim() !== "") {
+                var greenBoxTitle = "Möjliga gymnasieprogram";
+                var cleanDetails = programDetails;
+                if (programDetails.indexOf("Eftergymnasial") !== -1) {
+                    greenBoxTitle = "Eftergymnasial utbildning";
+                    cleanDetails = programDetails.replace(/^\s*Eftergymnasial utbildning\s*/i, '');
+                } else {
+                    cleanDetails = programDetails.replace(/^\s*Möjliga gymnasieprogram\s*/i, '');
+                }
+
                 htmlContent += '<div class="job-description-box" style="margin-bottom:14px; background:#e6f0ed !important; border-left:4px solid #348275;">' +
-                    '<strong style="color:#002649;">Om utbildningsvägen:</strong><br>' + programDetails + 
+                    '<strong style="color:#002649;">' + greenBoxTitle + '</strong><br>' + cleanDetails + 
                     '</div>';
             }
 

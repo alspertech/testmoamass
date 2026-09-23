@@ -586,7 +586,7 @@
     { id: 6, name: "Förskolan, Lidingö stad", professions: ["Förskollärare", "Barnskötare", "Rektor", "Biträdande rektor", "Kock", "Ekonomibiträde"] },
     { id: 7, name: "Högberga Gård", professions: ["Hotelldirektör", "Kökschef/köksmästare", "Kockar", "Restaurangchef", "Hovmästare", "Servitörer/servitriser", "Diskare", "Husfru", "Städpersonal", "Receptionschef", "Receptionister", "Konferensbokare/innesäljare", "Konferensplanerare", "Fastighetschef", "Vaktmästare"] },
     { id: 8, name: "Rönneberga Konferens", professions: ["Köksmästare", "Souschef", "Kallskänka", "Kock", "Restaurangchef", "Sommelier", "Hovmästare", "Servitör"] },
-    { id: 9, name: "Försvarsmakten", professions: ["Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter)", "Sjukvård", "Kock", "Logistik och transport", "Underrättelse och säkerhet", "Ledning och samband", "Strid (amfibie, pansarskytte, flygbasjägare)", "Officer", "Administratör", "Ingenjör", "IT-specialister", "Ekonom", "Jurist", "Mekaniker och tekniker", "Kock och logister"] },
+    { id: 9, name: "Försvarsmakten", professions: ["Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)", "Sjukvård (Soldat och sjöman)", "Kock (Soldat och sjöman)", "Logistik och transport (Soldat och sjöman)", "Underrättelse och säkerhet (Soldat och sjöman)", "Ledning och samband (Soldat och sjöman)", "Strid (amfibie, pansarskytte, flygbasjägare) (Soldat och sjöman)", "Officer", "Administratör (Civila yrken)", "Ingenjör (Civila yrken)", "IT-specialister (Civila yrken)", "Ekonom (Civila yrken)", "Jurist (Civila yrken)", "Mekaniker och tekniker (Civila yrken)", "Kock och logister (Civila yrken)"] },
     { id: 10, name: "Tallink Silja Line", professions: ["Befälhavare", "Överstyrman", "Safety Officer", "Sjuksköterska", "Matros", "Teknisk chef", "Fartygsingenjör", "Motorman", "Restaurangchef", "Kökschef", "Köksmästare", "Servitör/servitris", "Butikssäljare", "Customer Service Agent", "Social Media & Content Specialists", "Key Account Manager", "Ekonom"] },
     { id: 11, name: "Polismyndigheten", professions: ["Ingripandepolis", "Områdespolis", "Utredare", "Insatspolis", "Spanare", "IT-forensiker", "Barnförhörsledare", "hundförare", "trafikpolis", "bombtekniker", "analytiker"] },
     { id: 12, name: "Skogshem & Wijk", professions: ["General Manager", "Kökschef/köksmästare", "Souschef", "Kockar", "Restaurangchef", "Hovmästare", "Servitörer/servitriser", "Diskare", "Städansvarig", "Städpersonal", "Hotellchef", "1:e receptionist", "Receptionister", "Försäljningschef", "Innesäljare", "Ekonomiansvarig", "Projektledare möten och event", "Fastighetschef", "Vaktmästare"] }
@@ -714,8 +714,10 @@
         "Försäljningschef": "Ställ frågor direkt i montern eller prata med din stydie och yrkesvägledare för att få reda på mer om vad jobbet innebär.",
         "Innesäljare": "Ställ frågor direkt i montern eller prata med din stydie och yrkesvägledare för att få reda på mer om vad jobbet innebär.",
         "Ekonomiansvarig": "Ställ frågor direkt i montern eller prata med din stydie och yrkesvägledare för att få reda på mer om vad jobbet innebär.",
-        "Projektledare möten och event": "Ställ frågor direkt i montern eller prata med din stydie och yrkesvägledare för att få reda på mer om vad jobbet innebär."
-    };
+        "Projektledare möten och event": "Ställ frågor direkt i montern eller prata med din stydie och yrkesvägledare för att få reda på mer om vad jobbet innebär.",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "Försvarsmaktens soldater och sjömän är en av de militära delarna av försvarsmakten. För att kunna jobba som soldat eller sjöman måste man ha en godkänd grundutbildning med värnplikt.",
+        "Administratör (Civila yrken)": "De civilanställda i försvarsmakten jobbar med att stödja den militära verksamheten. Arbetsuppgifterna varierar beroende på yrke men handlar om att se till att försvarsmakten fungerar effektivt och kan lösa sin uppgift. Som civil jobbar du i många fall med den tekningen och de uppgifterna som aldrig får sluta fungera."
+};
 
     var generalQuestions = [
         "Vad är det mest oväntade eller roligaste med ditt jobb?",
@@ -1104,6 +1106,12 @@
         "Projektledare möten och event": [
                 "Hotell- och turismprogrammet",
                 "Försäljning- och serviceprogrammet"
+        ],
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": [
+                "godkänd grundutbildning med värnplikt"
+        ],
+        "Administratör (Civila yrken)": [
+                "Ställ frågor direkt i montern eller prata med din studie- och yrkesvägledare (SYV) för att få information om bästa väge till yrket."
         ]
 };
 
@@ -1229,8 +1237,10 @@
         "Försäljningschef": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
         "Innesäljare": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
         "Ekonomiansvarig": "Eftergymnasial utbildning  Eftergymnasial utbildning är studier du kan läsa efter gymnasiet och för att bli behörig behöver du oftast en gymnasieexamen. Du kan exempelvis studera vidare på högskola, universitet eller yrkeshögskola för att utbilda dig till ett specifikt yrke. Om du vill veta mer om de olika utbildningsvägarna och vad som passar dig ska du prata med din studie- och yrkesvägledare.",
-        "Projektledare möten och event": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program."
-    };
+        "Projektledare möten och event": "Möjliga gymnasieprogram  Till många yrken kan du läsa både yrkesförberedandeprogram och studieförberedande program. Är du intresserad av detta yrke och funderar på att gå ett yrkesprogram kan du titta lite extra på dessa program.",
+        "Tekniker och mekaniker (fordon, fartyg, flygplan, helikopter) (Soldat och sjöman)": "",
+        "Administratör (Civila yrken)": ""
+};
 
     var currentCompany = null;
     var currentProfessionObj = null;

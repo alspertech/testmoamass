@@ -920,7 +920,7 @@
             }).join('');
         }
         
-        if (starBtn) starBtn.style.display = 'block';
+        var starBtn = document.getElementById('star-btn'); if (starBtn) starBtn.style.display = 'block';
         updateStarButton();
         var modal = document.getElementById('modal');
         if (modal) modal.style.display = 'block';
@@ -995,7 +995,7 @@
             savedProfessions.push(currentProfessionObj);
         }
         saveToStorage();
-        if (starBtn) starBtn.style.display = 'block';
+        var starBtn = document.getElementById('star-btn'); if (starBtn) starBtn.style.display = 'block';
         updateStarButton();
         updateSavedCount();
     }
